@@ -22,7 +22,8 @@ namespace GameConsoleBase.Pages
         {
             // מציג את הכותרת של המסך
             base.Show();
-
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Magenta;
             // בקשה מהמשתמש להזין שם משתמש וסיסמה
             Console.WriteLine("Please enter user name and password:");
             Console.Write("User Name: ");
@@ -56,8 +57,10 @@ namespace GameConsoleBase.Pages
             Console.Clear();
 
             // עובר למסך הבא (GameMenuScreen)
-            Screen next = new GameMenuScreen();
+            Screen next = new ChooseMenuScreen();
             next.Show();
+
+            
         }
     }
 }

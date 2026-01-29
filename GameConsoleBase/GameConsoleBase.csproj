@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\SortByScoreScreen.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Towel" Version="1.0.40" />
   </ItemGroup>
 

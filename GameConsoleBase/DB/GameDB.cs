@@ -14,7 +14,8 @@ namespace GameConsoleBase.DB
         // התחלנו עם משתמש אחד לדוגמה: "tal Simon"
         private static List<User> users = new List<User>()
         {
-            new User("tal Simon", "talsi", "1234")
+            new User("tal Simon", "talsi", "1234"),
+            new User("noa","1","1")
         };
 
         // שיטה לרישום משתמש חדש
@@ -43,5 +44,22 @@ namespace GameConsoleBase.DB
             // חיפוש משתמש ברשימה לפי שם משתמש וסיסמה
             return users.FirstOrDefault(u => u.UserName == userName && u.Password == password);
         }
+
+        public static void SaveGameResult(User user, GameResult result)
+        {
+            var existing = user.GameHistory
+                .FirstOrDefault(g => g.GameName == result.GameName);
+
+            if (existing == null)
+            {
+                user.GameHistory.Add(result);
+            }
+            else if (result.Score > existing.Score)
+            {
+                existing.Score = result.Score;
+                existing.PlayTime = result.PlayTime;
+            }
+        }
+
     }
 }

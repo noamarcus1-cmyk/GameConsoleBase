@@ -24,7 +24,9 @@ namespace GameConsoleBase.Models
 			set;
 		}
 
-		public User(string name, string userName, string password)
+        public List<GameResult> GameHistory { get; set; } = new List<GameResult>();
+
+        public User(string name, string userName, string password)
 		{
 			Name = name;
 			UserName = userName;

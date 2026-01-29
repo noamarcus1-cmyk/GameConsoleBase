@@ -17,7 +17,7 @@ namespace GameConsoleBase.Pages
 		{
 			base.Show();
 			Console.ForegroundColor= ConsoleColor.Yellow;
-			Console.BackgroundColor= ConsoleColor.Blue;
+			Console.BackgroundColor= ConsoleColor.Magenta;
 			HorizontalCenter("Enjoy a variety of classic games!");
 			Console.ResetColor();
 			Console.ReadKey();

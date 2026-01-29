@@ -94,15 +94,17 @@ namespace GameConsoleBase.Pages
         }
 
         // שיטה שבודקת אם הסיסמה תקינה
+        
         private bool IsValidPassword(string? password)
         {
             // סיסמה חייבת להיות לפחות 6 תווים, להכיל את הסימן '@', ואינה יכולה להיות ריקה
-            if (password == null || password.Length < 6 || password.Contains("@") || string.IsNullOrEmpty(password))
+            if (password == null || password.Length < 6 || !password.Contains("@") || string.IsNullOrEmpty(password))
             {
                 Console.WriteLine("Password must be at least 6 characters long and contain '@' symbol.");
                 return false;
             }
             return true;
         }
+        
     }
 }
